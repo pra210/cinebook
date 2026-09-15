@@ -1,0 +1,990 @@
+/* =========================================
+   CINEBOOK - BOOKING PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY - CINEMATIC BACKGROUND
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(3, 5, 10, 0.62),
+            rgba(3, 5, 10, 0.74)
+        ),
+        url("../assests/images/backgrounds/homepage-bg.jpg");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.booking-header {
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(7, 9, 16, 0.88);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.booking-logo {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.booking-logo span {
+    color: #e50914;
+}
+
+
+/* IMAGE LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.brand img {
+    width: 155px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-link {
+    padding: 10px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.booking-page {
+    min-height: calc(100vh - 78px);
+
+    padding: 60px 7% 80px;
+
+    /* IMPORTANT:
+       Don't cover the body background */
+    background: transparent;
+}
+
+.booking-container {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.booking-heading {
+    margin-bottom: 40px;
+}
+
+.booking-heading > span {
+    color: #e50914;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.booking-heading h1 {
+    margin-top: 10px;
+
+    font-size: clamp(32px, 5vw, 52px);
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.booking-heading p {
+    margin-top: 10px;
+
+    color: #aeb5c2;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SELECTED MOVIE
+========================================= */
+
+.selected-movie {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    padding: 24px;
+
+    margin-bottom: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 18, 28, 0.78),
+            rgba(8, 10, 18, 0.62)
+        );
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.selected-movie-poster {
+    width: 105px;
+    height: 155px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.55);
+}
+
+.selected-movie-poster img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.selected-movie-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.movie-label {
+    color: #e50914;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+}
+
+.selected-movie-info h2 {
+    font-size: 30px;
+
+    font-weight: 800;
+}
+
+.booking-movie-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.booking-movie-meta span {
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #aeb5c2;
+
+    font-size: 11px;
+}
+
+.booking-movie-meta span:last-child {
+    color: #ffd21c;
+}
+
+
+/* =========================================
+   BOOKING SECTION
+========================================= */
+
+.booking-section {
+    margin-bottom: 42px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.section-title > span {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(229, 9, 20, 0.15);
+
+    border: 1px solid rgba(229, 9, 20, 0.3);
+
+    color: #ff3038;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.section-title h2 {
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.section-title p {
+    margin-top: 4px;
+
+    color: #8b94a4;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   DATE OPTIONS
+========================================= */
+
+.date-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(90px, 140px));
+
+    gap: 12px;
+}
+
+.date-card {
+    padding: 16px 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 12px;
+
+    background: rgba(8, 10, 18, 0.68);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.date-card span,
+.date-card small {
+    display: block;
+
+    color: #8b94a4;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.date-card strong {
+    display: block;
+
+    margin: 7px 0;
+
+    font-size: 28px;
+}
+
+.date-card:hover {
+    border-color: rgba(229, 9, 20, 0.5);
+
+    transform: translateY(-4px);
+}
+
+.date-card.active {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 12px 30px rgba(229, 9, 20, 0.25);
+}
+
+.date-card.active span,
+.date-card.active small {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================
+   THEATRES
+========================================= */
+
+.theatre-options {
+    display: grid;
+
+    gap: 10px;
+
+    max-width: 700px;
+}
+
+.theatre-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 12px;
+
+    background: rgba(8, 10, 18, 0.68);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.theatre-card div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.theatre-card strong {
+    font-size: 14px;
+}
+
+.theatre-card small {
+    color: #8b94a4;
+
+    font-size: 10px;
+}
+
+.theatre-card > span {
+    color: #8b94a4;
+
+    font-size: 24px;
+
+    transition: 0.3s ease;
+}
+
+.theatre-card:hover {
+    border-color: rgba(229, 9, 20, 0.4);
+
+    transform: translateX(4px);
+}
+
+.theatre-card:hover > span {
+    color: #e50914;
+}
+
+.theatre-card.active {
+    border-color: #e50914;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(229, 9, 20, 0.16),
+            rgba(8, 10, 18, 0.70)
+        );
+}
+
+
+/* =========================================
+   SHOW TIMES
+========================================= */
+
+.time-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.time-card {
+    min-width: 125px;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    background: rgba(8, 10, 18, 0.68);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.time-card strong {
+    display: block;
+
+    font-size: 13px;
+}
+
+.time-card small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8b94a4;
+
+    font-size: 10px;
+}
+
+.time-card:hover {
+    border-color: rgba(229, 9, 20, 0.5);
+
+    transform: translateY(-3px);
+}
+
+.time-card.active {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    box-shadow:
+        0 10px 25px rgba(229, 9, 20, 0.22);
+}
+
+.time-card.active small {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================
+   CONTINUE BUTTON
+========================================= */
+
+.booking-continue {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 45px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.continue-button {
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1b26,
+            #c9000b
+        );
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(229, 9, 20, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.continue-button span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.continue-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(229, 9, 20, 0.4);
+}
+
+.continue-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .booking-header {
+        padding: 0 5%;
+    }
+
+    .booking-page {
+        padding: 45px 5% 60px;
+    }
+
+    .selected-movie {
+        align-items: flex-start;
+    }
+
+    .selected-movie-info h2 {
+        font-size: 24px;
+    }
+
+    .date-options {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .booking-continue {
+        justify-content: stretch;
+    }
+
+    .continue-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .brand img {
+        width: 130px;
+    }
+
+    .booking-logo {
+        font-size: 20px;
+    }
+
+    .back-link {
+        padding: 8px 10px;
+
+        font-size: 10px;
+    }
+
+    .selected-movie {
+        flex-direction: column;
+    }
+
+    .selected-movie-poster {
+        width: 120px;
+        height: 175px;
+    }
+
+    .time-options {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .time-card {
+        min-width: 0;
+    }
+}
+/* =========================================
+   SIDE MENU
+========================================= */
+
+.menu-button {
+    position: fixed;
+
+    top: 18px;
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9px;
+
+    background: rgba(7, 9, 16, 0.85);
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
+}
+
+.menu-button:hover {
+    background: #e50914;
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12, 14, 23, 0.98),
+            rgba(5, 7, 12, 0.98)
+        );
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        15px 0 50px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1100;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.35s ease;
+
+    overflow-y: auto;
+}
+
+
+/* OPEN SIDEBAR */
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+
+/* SIDEBAR HEADER */
+
+.sidebar-header {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+
+    width: 150px;
+    height: 45px;
+
+    overflow: hidden;
+}
+
+.sidebar-logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-sidebar {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.close-sidebar:hover {
+    background: #e50914;
+}
+
+
+/* NAVIGATION */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.nav-item {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    color: #aeb5c2;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.nav-item span {
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.nav-item p {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.nav-item:hover {
+    background: rgba(229, 9, 20, 0.10);
+
+    color: #ffffff;
+
+    transform: translateX(4px);
+}
+
+
+/* DIVIDER */
+
+.sidebar-divider {
+    height: 1px;
+
+    margin: 15px 5px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* BOTTOM */
+
+.sidebar-bottom {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    text-align: center;
+}
+
+.sidebar-bottom p {
+    color: #687283;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* OVERLAY */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.60);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 1050;
+
+    transition: 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .menu-button {
+        top: 17px;
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar {
+        width: 260px;
+    }
+
+}

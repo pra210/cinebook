@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Select Seats</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+    <link rel="stylesheet" href="css/seats.css">
+</head>
+
+<body>
+    <!-- =========================================
+     SIDEBAR MENU
+========================================= -->
+
+<button class="menu-button" id="menuButton" type="button">
+    ☰
+</button>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-logo">
+            <img
+                src="assests/logos/cinebook-logo.png"
+                alt="CineBook Logo"
+            >
+        </div>
+
+        <button
+            class="close-sidebar"
+            id="closeSidebar"
+            type="button">
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+
+        <a href="movies.html" class="nav-item">
+            <span>🎬</span>
+            <p>Movies</p>
+        </a>
+
+        <a href="index.html#trending" class="nav-item">
+            <span>🔥</span>
+            <p>Trending</p>
+        </a>
+
+        <a href="index.html#recent" class="nav-item">
+            <span>🆕</span>
+            <p>Recently Added</p>
+        </a>
+
+        <a href="index.html#languages" class="nav-item">
+            <span>🌐</span>
+            <p>Languages</p>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <p>Profile</p>
+        </a>
+
+        <a href="#" class="nav-item" id="seatsLogoutButton">
+            <span>🚪</span>
+            <p>Logout</p>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+        <p>Enjoy your movie night 🍿</p>
+    </div>
+
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- HEADER -->
+    <header class="seats-header">
+        <a href="index.html" class="brand">
+    <img
+        src="assests/logos/cinebook-logo.png"
+        alt="CineBook Logo"
+    >
+</a>
+        <a href="booking.html" class="back-link">
+            ← Back to Booking
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="seats-page">
+
+        <div class="seats-container">
+
+            <!-- TITLE -->
+            <div class="seats-heading">
+
+                <span>04 • SEAT SELECTION</span>
+
+                <h1>
+                    Choose Your Seats
+                </h1>
+
+                <p>
+                    Pick your favourite seats and enjoy the movie.
+                </p>
+
+            </div>
+
+
+            <!-- MOVIE SUMMARY -->
+            <section class="seat-movie-summary">
+
+                <div class="seat-movie-poster">
+
+                    <img
+                        id="seatMoviePoster"
+                        src=""
+                        alt="Selected Movie"
+                    >
+
+                </div>
+
+                <div class="seat-movie-info">
+
+                    <span>BOOKING FOR</span>
+
+                    <h2 id="seatMovieTitle">
+                        Loading...
+                    </h2>
+
+                    <p id="seatShowDetails">
+                        Show details
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SCREEN -->
+            <section class="cinema-screen">
+
+                <div class="screen-shape">
+                    SCREEN
+                </div>
+
+                <p>
+                    All eyes this way
+                </p>
+
+            </section>
+
+
+            <!-- SEAT LEGEND -->
+            <div class="seat-legend">
+
+                <div>
+                    <span class="legend-seat available"></span>
+                    Available
+                </div>
+
+                <div>
+                    <span class="legend-seat selected"></span>
+                    Selected
+                </div>
+
+                <div>
+                    <span class="legend-seat occupied"></span>
+                    Occupied
+                </div>
+
+            </div>
+
+
+            <!-- SEATS -->
+            <section class="seat-layout">
+
+                <div class="seat-row">
+
+                    <span class="row-label">A</span>
+
+                    <button class="seat" data-seat="A1">1</button>
+                    <button class="seat" data-seat="A2">2</button>
+                    <button class="seat occupied" data-seat="A3">3</button>
+                    <button class="seat" data-seat="A4">4</button>
+                    <button class="seat" data-seat="A5">5</button>
+
+                    <span class="seat-gap"></span>
+
+                    <button class="seat" data-seat="A6">6</button>
+                    <button class="seat" data-seat="A7">7</button>
+                    <button class="seat occupied" data-seat="A8">8</button>
+                    <button class="seat" data-seat="A9">9</button>
+                    <button class="seat" data-seat="A10">10</button>
+
+                </div>
+
+
+                <div class="seat-row">
+
+                    <span class="row-label">B</span>
+
+                    <button class="seat" data-seat="B1">1</button>
+                    <button class="seat" data-seat="B2">2</button>
+                    <button class="seat" data-seat="B3">3</button>
+                    <button class="seat" data-seat="B4">4</button>
+                    <button class="seat occupied" data-seat="B5">5</button>
+
+                    <span class="seat-gap"></span>
+
+                    <button class="seat" data-seat="B6">6</button>
+                    <button class="seat" data-seat="B7">7</button>
+                    <button class="seat" data-seat="B8">8</button>
+                    <button class="seat" data-seat="B9">9</button>
+                    <button class="seat" data-seat="B10">10</button>
+
+                </div>
+
+
+                <div class="seat-row">
+
+                    <span class="row-label">C</span>
+
+                    <button class="seat" data-seat="C1">1</button>
+                    <button class="seat occupied" data-seat="C2">2</button>
+                    <button class="seat" data-seat="C3">3</button>
+                    <button class="seat" data-seat="C4">4</button>
+                    <button class="seat" data-seat="C5">5</button>
+
+                    <span class="seat-gap"></span>
+
+                    <button class="seat" data-seat="C6">6</button>
+                    <button class="seat" data-seat="C7">7</button>
+                    <button class="seat" data-seat="C8">8</button>
+                    <button class="seat occupied" data-seat="C9">9</button>
+                    <button class="seat" data-seat="C10">10</button>
+
+                </div>
+
+
+                <div class="seat-row">
+
+                    <span class="row-label">D</span>
+
+                    <button class="seat" data-seat="D1">1</button>
+                    <button class="seat" data-seat="D2">2</button>
+                    <button class="seat" data-seat="D3">3</button>
+                    <button class="seat occupied" data-seat="D4">4</button>
+                    <button class="seat" data-seat="D5">5</button>
+
+                    <span class="seat-gap"></span>
+
+                    <button class="seat" data-seat="D6">6</button>
+                    <button class="seat" data-seat="D7">7</button>
+                    <button class="seat" data-seat="D8">8</button>
+                    <button class="seat" data-seat="D9">9</button>
+                    <button class="seat" data-seat="D10">10</button>
+
+                </div>
+
+
+                <div class="seat-row">
+
+                    <span class="row-label">E</span>
+
+                    <button class="seat" data-seat="E1">1</button>
+                    <button class="seat" data-seat="E2">2</button>
+                    <button class="seat occupied" data-seat="E3">3</button>
+                    <button class="seat" data-seat="E4">4</button>
+                    <button class="seat" data-seat="E5">5</button>
+
+                    <span class="seat-gap"></span>
+
+                    <button class="seat" data-seat="E6">6</button>
+                    <button class="seat" data-seat="E7">7</button>
+                    <button class="seat" data-seat="E8">8</button>
+                    <button class="seat occupied" data-seat="E9">9</button>
+                    <button class="seat" data-seat="E10">10</button>
+
+                </div>
+
+            </section>
+
+
+            <!-- BOOKING SUMMARY -->
+            <section class="seat-summary">
+
+                <div>
+
+                    <span>SELECTED SEATS</span>
+
+                    <strong id="selectedSeats">
+                        None
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>TOTAL</span>
+
+                    <strong id="totalPrice">
+                        ₹0
+                    </strong>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="confirmSeats">
+
+                    PROCEED TO PAYMENT
+                    →
+                    
+                </button>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/seats.js"></script>
+    <script>
+    const menuButton = document.getElementById("menuButton");
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    menuButton.addEventListener("click", function () {
+        sidebar.classList.add("active");
+        sidebarOverlay.classList.add("active");
+    });
+
+    closeSidebar.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+    });
+
+    sidebarOverlay.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+    });
+</script>
+
+</body>
+
+</html>

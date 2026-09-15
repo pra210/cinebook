@@ -1,0 +1,359 @@
+/* =========================================
+   CINEBOOK SIDEBAR MENU
+========================================= */
+
+.menu-button {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 9px;
+
+    background: rgba(7,9,16,.85);
+    color: #fff;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+    transition: .3s ease;
+}
+
+.menu-button:hover {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-2px);
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(12,14,23,.98),
+        rgba(5,7,12,.98)
+    );
+
+    border-right: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: 15px 0 50px rgba(0,0,0,.45);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1100;
+
+    transform: translateX(-100%);
+    transition: transform .35s ease;
+
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+
+/* HEADER */
+
+.sidebar-header {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+    width: 150px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.sidebar-logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+    object-fit: contain;
+}
+
+
+/* CLOSE */
+
+.close-sidebar {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.06);
+
+    color: #fff;
+    font-size: 23px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.close-sidebar:hover {
+    background: #e50914;
+}
+
+
+/* NAVIGATION */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-item {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    color: #aeb5c2;
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.nav-item span {
+    width: 25px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.nav-item p {
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.nav-item:hover {
+    background: rgba(229,9,20,.10);
+    color: #fff;
+    transform: translateX(4px);
+}
+
+
+/* ACTIVE MOVIES */
+
+.nav-item.active {
+    background: rgba(229,9,20,.15);
+    color: #fff;
+}
+
+
+/* DIVIDER */
+
+.sidebar-divider {
+    height: 1px;
+
+    margin: 15px 5px;
+
+    background: rgba(255,255,255,.08);
+}
+
+
+/* BOTTOM */
+
+.sidebar-bottom {
+    margin-top: 30px;
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.035);
+
+    text-align: center;
+}
+
+.sidebar-bottom p {
+    color: #687283;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+/* OVERLAY */
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.60);
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 1050;
+
+    transition: .3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .menu-button {
+        top: 17px;
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar {
+        width: 260px;
+    }
+}
+
+/* =========================================
+   MOVIES MENU BUTTON
+========================================= */
+
+body.movies-page-body .menu-button {
+
+    position: fixed !important;
+
+    top: 18px !important;
+    left: 20px !important;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid rgba(255,255,255,.15) !important;
+    border-radius: 9px !important;
+
+    background: rgba(7,9,16,.95) !important;
+    color: #ffffff !important;
+
+    font-size: 22px !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+
+    z-index: 5000 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+body.movies-page-body .menu-button:hover {
+
+    background: #e50914 !important;
+    border-color: #e50914 !important;
+
+    transform: translateY(-2px) !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body.movies-page-body .menu-button {
+
+        top: 17px !important;
+        left: 15px !important;
+
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+}
+/* =========================================
+   REMOVE ALL OLD HOMEPAGE / HERO GRAPHICS
+   FROM MOVIES PAGE
+========================================= */
+
+body.movies-page-body .hero-section,
+body.movies-page-body .hero-background,
+body.movies-page-body .hero-gradient,
+body.movies-page-body .hero-content {
+    display: none !important;
+    background-image: none !important;
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 2000;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.menu-button {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2100;
+    cursor: pointer;
+}
+

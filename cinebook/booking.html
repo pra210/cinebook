@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Book Tickets</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-icon.png">
+
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+    <!-- =========================================
+     SIDEBAR MENU
+========================================= -->
+
+<button class="menu-button" id="menuButton" type="button">
+    ☰
+</button>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-logo">
+            <img
+                src="assests/logos/cinebook-logo.png"
+                alt="CineBook Logo"
+            >
+        </div>
+
+        <button
+            class="close-sidebar"
+            id="closeSidebar"
+            type="button">
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+
+        <a href="movies.html" class="nav-item">
+            <span>🎬</span>
+            <p>Movies</p>
+        </a>
+
+        <a href="index.html#trending" class="nav-item">
+            <span>🔥</span>
+            <p>Trending</p>
+        </a>
+
+        <a href="index.html#recent" class="nav-item">
+            <span>🆕</span>
+            <p>Recently Added</p>
+        </a>
+
+        <a href="index.html#languages" class="nav-item">
+            <span>🌐</span>
+            <p>Languages</p>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <p>Profile</p>
+        </a>
+
+        <a href="#" class="nav-item" id="bookingLogoutButton">
+            <span>🚪</span>
+            <p>Logout</p>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+        <p>Enjoy your movie night 🍿</p>
+    </div>
+
+</aside>
+
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- HEADER -->
+    <header class="booking-header">
+        <a href="index.html" class="brand">
+    <img
+        src="assests/logos/cinebook-logo.png"
+        alt="CineBook Logo"
+    >
+</a>
+
+        <a href="movie-details.html" class="back-link">
+            ← Back to Movie
+        </a>
+
+    </header>
+
+
+    <!-- BOOKING PAGE -->
+    <main class="booking-page">
+
+        <div class="booking-container">
+
+            <!-- PAGE TITLE -->
+            <div class="booking-heading">
+
+                <span>🎟️ CINEBOOK</span>
+
+                <h1>
+                    Book Your Tickets
+                </h1>
+
+                <p>
+                    Choose your date, theatre and show time
+                </p>
+
+            </div>
+
+
+            <!-- SELECTED MOVIE -->
+            <section class="selected-movie">
+
+                <div class="selected-movie-poster">
+
+                    <img
+                        id="bookingMoviePoster"
+                        src=""
+                        alt="Selected Movie"
+                    >
+
+                </div>
+
+
+                <div class="selected-movie-info">
+
+                    <span class="movie-label">
+                        SELECTED MOVIE
+                    </span>
+
+                    <h2 id="bookingMovieTitle">
+                        Loading...
+                    </h2>
+
+                    <div class="booking-movie-meta">
+
+                        <span id="bookingMovieLanguage">
+                            Language
+                        </span>
+
+                        <span id="bookingMovieGenre">
+                            Genre
+                        </span>
+
+                        <span id="bookingMovieRating">
+                            ⭐ Rating
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DATE -->
+            <section class="booking-section">
+
+                <div class="section-title">
+
+                    <span>01</span>
+
+                    <div>
+                        <h2>Select Date</h2>
+                        <p>Choose your preferred date</p>
+                    </div>
+
+                </div>
+
+
+                <div class="date-options">
+
+                    <button class="date-card active" type="button">
+
+                        <span>FRI</span>
+                        <strong>28</strong>
+                        <small>AUG</small>
+
+                    </button>
+
+                    <button class="date-card" type="button">
+
+                        <span>SAT</span>
+                        <strong>29</strong>
+                        <small>AUG</small>
+
+                    </button>
+
+                    <button class="date-card" type="button">
+
+                        <span>SUN</span>
+                        <strong>30</strong>
+                        <small>AUG</small>
+
+                    </button>
+
+                    <button class="date-card" type="button">
+
+                        <span>MON</span>
+                        <strong>31</strong>
+                        <small>AUG</small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- THEATRE -->
+            <section class="booking-section">
+
+                <div class="section-title">
+
+                    <span>02</span>
+
+                    <div>
+                        <h2>Select Theatre</h2>
+                        <p>Choose a theatre near you</p>
+                    </div>
+
+                </div>
+
+
+                <div class="theatre-options">
+
+                    <button class="theatre-card active"
+                            type="button">
+
+                        <div>
+                            <strong>CineBook Cinemas</strong>
+
+                            <small>
+                                📍 Chennai • PVR Road
+                            </small>
+                        </div>
+
+                        <span>›</span>
+
+                    </button>
+
+
+                    <button class="theatre-card"
+                            type="button">
+
+                        <div>
+                            <strong>INOX Cinemas</strong>
+
+                            <small>
+                                📍 Chennai • Phoenix Mall
+                            </small>
+                        </div>
+
+                        <span>›</span>
+
+                    </button>
+
+
+                    <button class="theatre-card"
+                            type="button">
+
+                        <div>
+                            <strong>AGS Cinemas</strong>
+
+                            <small>
+                                📍 Chennai • T Nagar
+                            </small>
+                        </div>
+
+                        <span>›</span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- SHOW TIME -->
+            <section class="booking-section">
+
+                <div class="section-title">
+
+                    <span>03</span>
+
+                    <div>
+                        <h2>Select Show Time</h2>
+                        <p>Choose your preferred show</p>
+                    </div>
+
+                </div>
+
+
+                <div class="time-options">
+
+                    <button class="time-card" type="button">
+                        <strong>10:30 AM</strong>
+                        <small>Morning</small>
+                    </button>
+
+                    <button class="time-card active" type="button">
+                        <strong>01:45 PM</strong>
+                        <small>Afternoon</small>
+                    </button>
+
+                    <button class="time-card" type="button">
+                        <strong>04:30 PM</strong>
+                        <small>Evening</small>
+                    </button>
+
+                    <button class="time-card" type="button">
+                        <strong>07:30 PM</strong>
+                        <small>Night</small>
+                    </button>
+
+                    <button class="time-card" type="button">
+                        <strong>10:30 PM</strong>
+                        <small>Late Night</small>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTINUE -->
+            <div class="booking-continue">
+
+                <button
+                    type="button"
+                    id="continueBooking"
+                    class="continue-button">
+
+                    CONTINUE TO SEATS
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="data/movies.js"></script>
+
+    <script src="js/booking.js"></script>
+    <script>
+    const menuButton = document.getElementById("menuButton");
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    menuButton.addEventListener("click", function () {
+        sidebar.classList.add("active");
+        sidebarOverlay.classList.add("active");
+    });
+
+    closeSidebar.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+    });
+
+    sidebarOverlay.addEventListener("click", function () {
+        sidebar.classList.remove("active");
+        sidebarOverlay.classList.remove("active");
+    });
+</script>
+
+
+</body>
+
+</html>

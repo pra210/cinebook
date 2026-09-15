@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | My Account</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+    <link rel="stylesheet" href="css/profile.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="profile-header">
+
+        <a href="index.html" class="profile-logo">
+            🎬 Cine<span>Book</span>
+        </a>
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </header>
+
+
+    <!-- PROFILE PAGE -->
+
+    <main class="profile-page">
+
+        <div class="profile-container">
+
+
+            <!-- PROFILE HEADING -->
+
+            <div class="profile-heading">
+
+                <span>MY ACCOUNT</span>
+
+                <h1>
+                    Welcome, <strong id="profileName">User</strong> 👋
+                </h1>
+
+                <p>
+                    Manage your CineBook account and bookings.
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE CARD -->
+
+            <section class="profile-card">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    U
+                </div>
+
+
+                <div class="profile-info">
+
+                    <span>
+                        ACCOUNT DETAILS
+                    </span>
+
+                    <h2 id="profileFullName">
+                        User
+                    </h2>
+
+                    <p id="profileEmail">
+                        user@example.com
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="logout-button">
+
+                    LOGOUT
+
+                </button>
+
+            </section>
+
+
+            <!-- ACCOUNT OPTIONS -->
+
+            <section class="account-section">
+
+                <h2>
+                    My Account
+                </h2>
+
+
+                <div class="account-grid">
+
+
+                    <!-- MY BOOKINGS -->
+
+                    <button
+                        type="button"
+                        class="account-card"
+                        id="myBookingsButton">
+
+                        <span class="account-icon">
+                            🎟️
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                My Bookings
+                            </strong>
+
+                            <small>
+                                View your movie tickets
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- PERSONAL DETAILS -->
+
+                    <button
+                        type="button"
+                        class="account-card"
+                        id="personalDetailsButton">
+
+                        <span class="account-icon">
+                            👤
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Personal Details
+                            </strong>
+
+                            <small>
+                                View your account information
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- HELP -->
+
+                    <button
+                        type="button"
+                        class="account-card"
+                        id="helpButton">
+
+                        <span class="account-icon">
+                            ❓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Help & Support
+                            </strong>
+
+                            <small>
+                                Get help with CineBook
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- LOGOUT -->
+
+                    <button
+                        type="button"
+                        class="account-card"
+                        id="logoutCardButton">
+
+                        <span class="account-icon">
+                            🚪
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Sign Out
+                            </strong>
+
+                            <small>
+                                Logout from CineBook
+                            </small>
+
+                        </div>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- BOOKING HISTORY -->
+
+            <section class="booking-history">
+
+                <div class="history-heading">
+
+                    <div>
+
+                        <span>
+                            YOUR ACTIVITY
+                        </span>
+
+                        <h2>
+                            Recent Bookings
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="bookingHistory"
+                    class="booking-history-list">
+
+                    <div class="empty-bookings">
+
+                        <div>
+                            🎬
+                        </div>
+
+                        <h3>
+                            No bookings yet
+                        </h3>
+
+                        <p>
+                            Your movie bookings will appear here.
+                        </p>
+
+                        <a href="index.html">
+                            Browse Movies
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

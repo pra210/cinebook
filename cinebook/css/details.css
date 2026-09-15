@@ -1,0 +1,748 @@
+/* =========================================
+   CINEBOOK - MOVIE DETAILS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* FULL CINEMATIC BACKGROUND */
+    background:
+        linear-gradient(
+            rgba(3, 5, 10, 0.62),
+            rgba(3, 5, 10, 0.72)
+        ),
+        url("../assests/images/backgrounds/homepage-bg.jpg");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.details-header {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(8, 10, 18, 0.90);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.logo strong {
+    color: #e50914;
+}
+
+
+/* IMAGE LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.brand img {
+    width: 155px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   HEADER BACK BUTTON
+========================================= */
+
+.details-header .back-button {
+    color: #ffffff;
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.details-header .back-button:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   DETAILS PAGE
+========================================= */
+
+.movie-details-page {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 70px 7%;
+
+    /* IMPORTANT:
+       Keep transparent so body background is visible */
+    background: transparent;
+}
+
+
+/* =========================================
+   MOVIE CONTAINER
+========================================= */
+
+.movie-details-container {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 55px;
+}
+
+
+/* =========================================
+   POSTER
+========================================= */
+
+.details-poster {
+    width: 320px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.75),
+        0 0 35px rgba(229, 9, 20, 0.12);
+}
+
+.details-poster img {
+    width: 100%;
+    height: 470px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.details-poster:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.details-content {
+    max-width: 650px;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    background: rgba(5, 7, 13, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.details-category {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #ff3038;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.details-content h1 {
+    margin-bottom: 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(40px, 5vw, 68px);
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   MOVIE META
+========================================= */
+
+.details-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+
+    color: #aeb5c2;
+
+    font-size: 14px;
+}
+
+.details-meta span {
+    padding-right: 14px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.details-meta span:last-child {
+    border-right: none;
+}
+
+.details-meta .rating {
+    color: #ffd21c;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.details-description {
+    max-width: 600px;
+
+    margin-bottom: 30px;
+
+    color: #d1d5dd;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.details-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.book-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px rgba(229, 9, 20, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.book-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(229, 9, 20, 0.45);
+}
+
+.details-actions .back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.details-actions .back-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   NO MOVIE
+========================================= */
+
+.no-movie {
+    width: 100%;
+
+    text-align: center;
+}
+
+.no-movie h2 {
+    margin-bottom: 12px;
+
+    font-size: 30px;
+}
+
+.no-movie p {
+    margin-bottom: 20px;
+
+    color: #9da5b4;
+}
+
+.no-movie a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 12px 22px;
+
+    background: #e50914;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .details-header {
+        padding: 0 5%;
+    }
+
+    .movie-details-page {
+        padding: 50px 5%;
+    }
+
+    .movie-details-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 35px;
+    }
+
+    .details-poster {
+        width: 280px;
+    }
+
+    .details-poster img {
+        height: 410px;
+    }
+
+    .details-content h1 {
+        font-size: 42px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .details-header {
+        height: 70px;
+    }
+
+    .brand img {
+        width: 130px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .details-header .back-button {
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
+    .details-poster {
+        width: 100%;
+
+        max-width: 300px;
+    }
+
+    .details-poster img {
+        height: auto;
+
+        aspect-ratio: 2 / 3;
+    }
+
+    .details-content {
+        padding: 25px;
+    }
+
+    .details-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+}
+/* =========================================
+   CINEBOOK SIDEBAR MENU
+========================================= */
+
+.menu-button {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 9px;
+
+    background: rgba(7,9,16,.85);
+    color: #fff;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+
+    transition: .3s ease;
+}
+
+.menu-button:hover {
+    background: #e50914;
+    border-color: #e50914;
+    transform: translateY(-2px);
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12,14,23,.98),
+            rgba(5,7,12,.98)
+        );
+
+    border-right: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: 15px 0 50px rgba(0,0,0,.45);
+
+    backdrop-filter: blur(18px);
+
+    z-index: 1100;
+
+    transform: translateX(-100%);
+
+    transition: transform .35s ease;
+
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+
+/* SIDEBAR HEADER */
+
+.sidebar-header {
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+    width: 150px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.sidebar-logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-sidebar {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.06);
+
+    color: #fff;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.close-sidebar:hover {
+    background: #e50914;
+}
+
+
+/* NAVIGATION */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-item {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    color: #aeb5c2;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.nav-item span {
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.nav-item p {
+    margin: 0;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.nav-item:hover {
+    background: rgba(229,9,20,.10);
+
+    color: #fff;
+
+    transform: translateX(4px);
+}
+
+
+/* DIVIDER */
+
+.sidebar-divider {
+    height: 1px;
+
+    margin: 15px 5px;
+
+    background: rgba(255,255,255,.08);
+}
+
+
+/* BOTTOM MESSAGE */
+
+.sidebar-bottom {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.035);
+
+    text-align: center;
+}
+
+.sidebar-bottom p {
+    color: #687283;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* OVERLAY */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.60);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 1050;
+
+    transition: .3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .menu-button {
+        top: 17px;
+        left: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar {
+        width: 260px;
+    }
+
+}

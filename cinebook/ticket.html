@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | My Ticket</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+
+    <link rel="stylesheet" href="css/ticket.css">
+
+</head>
+
+<body>
+
+    <main class="ticket-page">
+
+        <div class="ticket-container">
+
+            <!-- HEADER -->
+
+            <div class="ticket-header">
+                <div class="ticket-logo">
+                    <img src="assests/logos/cinebook-logo.png"
+                    alt="CineBook Logo"></div>
+
+                <div class="ticket-status">
+                    ✓ CONFIRMED
+                </div>
+
+            </div>
+
+
+            <!-- TICKET CONTENT -->
+
+            <div class="ticket-content">
+
+
+                <!-- POSTER -->
+
+                <img
+                    id="ticketPoster"
+                    class="ticket-poster"
+                    src=""
+                    alt="Movie Poster"
+                >
+
+
+                <!-- DETAILS -->
+
+                <div class="ticket-details">
+
+                    <span class="ticket-label">
+                        MOVIE
+                    </span>
+
+                    <h1 id="ticketMovie">
+                        Movie
+                    </h1>
+
+
+                    <div class="ticket-grid">
+
+
+                        <div class="ticket-item">
+
+                            <span class="ticket-label">
+                                DATE
+                            </span>
+
+                            <strong id="ticketDate">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="ticket-item">
+
+                            <span class="ticket-label">
+                                SHOW TIME
+                            </span>
+
+                            <strong id="ticketTime">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="ticket-item">
+
+                            <span class="ticket-label">
+                                THEATRE
+                            </span>
+
+                            <strong id="ticketTheatre">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="ticket-item">
+
+                            <span class="ticket-label">
+                                SEATS
+                            </span>
+
+                            <strong id="ticketSeats">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TICKET FOOTER -->
+
+            <div class="ticket-footer">
+
+
+                <div>
+
+                    <span class="ticket-label">
+                        BOOKING ID
+                    </span>
+
+                    <strong id="ticketBookingId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="ticket-price">
+
+                    <span class="ticket-label">
+                        TOTAL PAID
+                    </span>
+
+                    <strong id="ticketTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="ticket-actions">
+
+                <button
+                    type="button"
+                    id="printTicket"
+                >
+                    🖨️ PRINT TICKET
+                </button>
+
+
+                <button
+                    type="button"
+                    id="backToProfile"
+                >
+                    ← BACK TO PROFILE
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/ticket.js"></script>
+
+</body>
+
+</html>

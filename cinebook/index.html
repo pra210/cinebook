@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CineBook | Movie Booking</title>
+
+    <!-- FAVICON -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="assests/logos/cinebook-logo.png"
+    >
+
+    <!-- MAIN CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- HOME PAGE FIXES -->
+    <style>
+
+        /* =========================================
+           HOME PAGE
+        ========================================== */
+
+        body {
+            min-height: 100vh;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        /* =========================================
+           MENU BUTTON
+        ========================================== */
+
+        .menu-button {
+            position: fixed;
+
+            top: 18px;
+            left: 20px;
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 9px;
+
+            background: rgba(7,9,16,0.90);
+
+            color: #ffffff;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 3000;
+
+            transition: 0.3s ease;
+        }
+
+
+        .menu-button:hover {
+            background: #e50914;
+            border-color: #e50914;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           SIDEBAR
+        ========================================== */
+
+        .sidebar {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 280px;
+            height: 100vh;
+
+            padding: 25px 18px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(12,14,23,0.98),
+                    rgba(5,7,12,0.98)
+                );
+
+            border-right: 1px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+                15px 0 50px rgba(0,0,0,0.45);
+
+            backdrop-filter: blur(18px);
+
+            z-index: 2900;
+
+            transform: translateX(-100%);
+
+            transition: transform 0.35s ease;
+
+            overflow-y: auto;
+        }
+
+
+        /* SUPPORT BOTH OLD AND NEW MENU STATES */
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+            left: 0;
+        }
+
+
+        /* =========================================
+           SIDEBAR HEADER
+        ========================================== */
+
+        .sidebar-header {
+            min-height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================
+           SIDEBAR LOGO
+        ========================================== */
+
+        .sidebar-logo {
+            width: 150px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            text-decoration: none;
+        }
+
+
+        .sidebar-logo img {
+            width: 150px !important;
+            height: auto !important;
+
+            max-width: 150px !important;
+            max-height: 45px !important;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================
+           CLOSE BUTTON
+        ========================================== */
+
+        .close-sidebar {
+            width: 35px;
+            height: 35px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: rgba(255,255,255,0.06);
+
+            color: #ffffff;
+
+            font-size: 23px;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+
+        .close-sidebar:hover {
+            background: #e50914;
+        }
+
+
+        /* =========================================
+           SIDEBAR NAVIGATION
+        ========================================== */
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+
+            gap: 7px;
+        }
+
+
+        .nav-item {
+            min-height: 48px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            padding: 0 15px;
+
+            border-radius: 9px;
+
+            color: #aeb5c2;
+
+            text-decoration: none;
+
+            transition: 0.25s ease;
+        }
+
+
+        .nav-item span {
+            width: 25px;
+
+            text-align: center;
+
+            font-size: 18px;
+        }
+
+
+        .nav-item p {
+            margin: 0;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .nav-item:hover {
+            background: rgba(229,9,20,0.10);
+
+            color: #ffffff;
+
+            transform: translateX(4px);
+        }
+
+
+        .nav-item.active {
+            background: rgba(229,9,20,0.15);
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           DIVIDER
+        ========================================== */
+
+        .sidebar-divider {
+            height: 1px;
+
+            margin: 15px 5px;
+
+            background: rgba(255,255,255,0.08);
+        }
+
+
+        /* =========================================
+           SIDEBAR BOTTOM
+        ========================================== */
+
+        .sidebar-bottom {
+            margin-top: 30px;
+
+            padding: 18px;
+
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.035);
+
+            text-align: center;
+        }
+
+
+        .sidebar-bottom p {
+            color: #687283;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           OVERLAY
+        ========================================== */
+
+        .sidebar-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.60);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            z-index: 2800;
+
+            transition: 0.3s ease;
+        }
+
+
+        .sidebar-overlay.active,
+        .sidebar-overlay.show {
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+
+        /* =========================================
+           HOME LOGO
+        ========================================== */
+
+        .brand img {
+            width: 150px !important;
+
+            height: auto !important;
+
+            max-width: 150px !important;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================== */
+
+        .hero-section {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            .menu-button {
+                top: 17px;
+
+                left: 15px;
+
+                width: 40px;
+                height: 40px;
+            }
+
+
+            .sidebar {
+                width: 260px;
+            }
+
+
+            .sidebar-logo {
+                width: 140px;
+            }
+
+
+            .sidebar-logo img {
+                width: 140px !important;
+
+                max-width: 140px !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="sidebar-header">
+
+            <!-- SMALL CINEBOOK LOGO -->
+
+            <a
+                href="index.html"
+                class="sidebar-logo"
+            >
+
+                <img
+                    src="assests/logos/cinebook-logo.png"
+                    alt="CineBook Logo"
+                >
+
+            </a>
+
+
+            <!-- CLOSE BUTTON -->
+
+            <button
+                class="close-sidebar"
+                id="closeSidebar"
+                type="button"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             NAVIGATION
+        ====================================== -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- HOME -->
+
+            <a
+                href="index.html"
+                class="nav-item active"
+            >
+
+                <span>🏠</span>
+
+                <p>Home</p>
+
+            </a>
+
+
+            <!-- MOVIES -->
+
+            <a
+                href="movies.html"
+                class="nav-item"
+            >
+
+                <span>🎬</span>
+
+                <p>Movies</p>
+
+            </a>
+
+
+            <!-- TRENDING -->
+
+            <a
+                href="index.html#trending"
+                class="nav-item"
+            >
+
+                <span>🔥</span>
+
+                <p>Trending</p>
+
+            </a>
+
+
+            <!-- RECENTLY ADDED -->
+
+            <a
+                href="index.html#recent"
+                class="nav-item"
+            >
+
+                <span>🆕</span>
+
+                <p>Recently Added</p>
+
+            </a>
+
+
+            <!-- LANGUAGES -->
+
+            <a
+                href="index.html#languages"
+                class="nav-item"
+            >
+
+                <span>🌐</span>
+
+                <p>Languages</p>
+
+            </a>
+
+
+            <!-- DIVIDER -->
+
+            <div class="sidebar-divider"></div>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="profile.html"
+                class="nav-item"
+            >
+
+                <span>👤</span>
+
+                <p>Profile</p>
+
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <a
+                href="#"
+                class="nav-item"
+                id="logoutButton"
+            >
+
+                <span>🚪</span>
+
+                <p>Logout</p>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- =====================================
+             SIDEBAR BOTTOM
+        ====================================== -->
+
+        <div class="sidebar-bottom">
+
+            <p>
+                Enjoy your movie night 🍿
+            </p>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+
+                <!-- MENU BUTTON -->
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                    type="button"
+                    aria-label="Open menu"
+                >
+
+                    ☰
+
+                </button>
+
+
+                <!-- CINEBOOK LOGO -->
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+
+                    <img
+                        src="assests/logos/cinebook-logo.png"
+                        alt="CineBook Logo"
+                    >
+
+                </a>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 SEARCH
+            ====================================== -->
+
+            <div class="search-container">
+
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+
+                <input
+                    type="text"
+                    id="movieSearch"
+                    placeholder="Search movies, actors, genres..."
+                    autocomplete="off"
+                >
+
+
+                <div
+                    class="search-results"
+                    id="searchResults"
+                ></div>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 PROFILE / NOTIFICATION
+            ====================================== -->
+
+            <div class="header-right">
+
+
+                <button
+                    class="notification-button"
+                    type="button"
+                >
+
+                    🔔
+
+                </button>
+
+
+                <a
+                    href="profile.html"
+                    class="profile-button"
+                >
+
+
+                    <div class="profile-avatar">
+
+                        👤
+
+                    </div>
+
+
+                    <div class="profile-info">
+
+                        <span>
+                            Welcome
+                        </span>
+
+                        <strong id="userName">
+                            Movie Lover
+                        </strong>
+
+                    </div>
+
+
+                </a>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =========================================
+             HERO - CINEBOOK EXPERIENCE
+        ========================================== -->
+
+        <section class="hero-section">
+
+
+            <div class="hero-background">
+
+                <div class="hero-gradient"></div>
+
+            </div>
+
+
+            <div class="hero-content">
+
+
+                <!-- BADGE -->
+
+                <div class="hero-badge">
+
+                    🎬 WELCOME TO CINEBOOK
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h1 class="hero-title">
+
+                    YOUR NEXT MOVIE NIGHT
+
+                    <span>
+                        STARTS HERE.
+                    </span>
+
+                </h1>
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="hero-description">
+
+                    Discover the latest movies, choose your favourite
+                    showtime and seats, and book your complete movie
+                    experience with CineBook.
+
+                </p>
+
+
+                <!-- FEATURES -->
+
+                <div class="hero-meta">
+
+
+                    <span>
+                        🎥 Latest Movies
+                    </span>
+
+
+                    <span>
+                        💺 Easy Seat Selection
+                    </span>
+
+
+                    <span>
+                        🎟️ Digital Tickets
+                    </span>
+
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="hero-buttons">
+
+
+                    <a
+                        href="movies.html"
+                        class="primary-button"
+                    >
+
+                        🎬 EXPLORE MOVIES
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="discoverCinebookButton"
+                    >
+
+                        ✨ DISCOVER CINEBOOK
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             TRENDING MOVIES
+        ========================================== -->
+
+        <section
+            class="movie-section"
+            id="trending"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="section-label">
+
+                        WHAT'S HOT
+
+                    </p>
+
+
+                    <h2>
+
+                        🔥 Trending Movies
+
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="movies.html"
+                    class="see-all"
+                >
+
+                    See All →
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                class="movie-grid"
+                id="trendingMovies"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             NOW SHOWING
+        ========================================== -->
+
+        <section
+            class="movie-section"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="section-label">
+
+                        IN CINEMAS
+
+                    </p>
+
+
+                    <h2>
+
+                        🎬 Now Showing
+
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="movies.html"
+                    class="see-all"
+                >
+
+                    View All →
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                class="movie-grid"
+                id="nowShowingMovies"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             RECENTLY ADDED
+        ========================================== -->
+
+        <section
+            class="movie-section"
+            id="recent"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="section-label">
+
+                        JUST ARRIVED
+
+                    </p>
+
+
+                    <h2>
+
+                        🆕 Recently Added
+
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="movies.html"
+                    class="see-all"
+                >
+
+                    See All →
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                class="movie-grid"
+                id="recentMovies"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             LANGUAGES
+        ========================================== -->
+
+        <section
+            class="language-section"
+            id="languages"
+        >
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="section-label">
+
+                        EXPLORE BY LANGUAGE
+
+                    </p>
+
+
+                    <h2>
+
+                        🌐 Choose Your Language
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="language-grid">
+
+
+                <!-- TAMIL -->
+
+                <a
+                    href="movies.html?language=Tamil"
+                    class="language-card"
+                    data-language="Tamil"
+                >
+
+                    <span>
+                        தமிழ்
+                    </span>
+
+                    <strong>
+                        Tamil
+                    </strong>
+
+                    <small>
+                        Explore Movies →
+                    </small>
+
+                </a>
+
+
+                <!-- TELUGU -->
+
+                <a
+                    href="movies.html?language=Telugu"
+                    class="language-card"
+                    data-language="Telugu"
+                >
+
+                    <span>
+                        తెలుగు
+                    </span>
+
+                    <strong>
+                        Telugu
+                    </strong>
+
+                    <small>
+                        Explore Movies →
+                    </small>
+
+                </a>
+
+
+                <!-- HINDI -->
+
+                <a
+                    href="movies.html?language=Hindi"
+                    class="language-card"
+                    data-language="Hindi"
+                >
+
+                    <span>
+                        हिन्दी
+                    </span>
+
+                    <strong>
+                        Hindi
+                    </strong>
+
+                    <small>
+                        Explore Movies →
+                    </small>
+
+                </a>
+
+
+                <!-- ENGLISH -->
+
+                <a
+                    href="movies.html?language=English"
+                    class="language-card"
+                    data-language="English"
+                >
+
+                    <span>
+                        EN
+                    </span>
+
+                    <strong>
+                        English
+                    </strong>
+
+                    <small>
+                        Explore Movies →
+                    </small>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             CINEBOOK EXPERIENCE POPUP
+        ========================================== -->
+
+        <div
+            class="cinebook-modal"
+            id="cinebookModal"
+        >
+
+
+            <!-- OVERLAY -->
+
+            <div
+                class="cinebook-modal-overlay"
+                id="cinebookModalOverlay"
+            ></div>
+
+
+            <!-- MODAL CONTENT -->
+
+            <div class="cinebook-modal-content">
+
+
+                <!-- CLOSE -->
+
+                <button
+                    type="button"
+                    class="cinebook-modal-close"
+                    id="cinebookModalClose"
+                >
+
+                    ×
+
+                </button>
+
+
+                <!-- HEADER -->
+
+                <div class="cinebook-modal-header">
+
+
+                    <span class="cinebook-modal-label">
+
+                        ✨ THE CINEBOOK EXPERIENCE
+
+                    </span>
+
+
+                    <h2>
+
+                        YOUR COMPLETE
+
+                        <span>
+                            MOVIE EXPERIENCE
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        From discovering your favourite movie
+                        to receiving your digital ticket,
+                        CineBook makes your movie night simple,
+                        smooth and enjoyable.
+
+                    </p>
+
+
+                </div>
+
+
+                <!-- =====================================
+                     FEATURES
+                ====================================== -->
+
+                <div class="cinebook-experience-grid">
+
+
+                    <!-- FEATURE 1 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            🎬
+                        </div>
+
+
+                        <h3>
+                            Discover Movies
+                        </h3>
+
+
+                        <p>
+                            Explore trending, latest and
+                            recently added movies.
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- FEATURE 2 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            🏢
+                        </div>
+
+
+                        <h3>
+                            Choose Theatre
+                        </h3>
+
+
+                        <p>
+                            Select your preferred theatre
+                            and convenient showtime.
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- FEATURE 3 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            💺
+                        </div>
+
+
+                        <h3>
+                            Select Your Seat
+                        </h3>
+
+
+                        <p>
+                            Pick your favourite available
+                            seats for the movie.
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- FEATURE 4 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            💳
+                        </div>
+
+
+                        <h3>
+                            Easy Payment
+                        </h3>
+
+
+                        <p>
+                            Complete your movie booking
+                            through a simple payment process.
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- FEATURE 5 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            🎟️
+                        </div>
+
+
+                        <h3>
+                            Digital Ticket
+                        </h3>
+
+
+                        <p>
+                            Receive your booking confirmation
+                            and digital movie ticket.
+                        </p>
+
+
+                    </div>
+
+
+                    <!-- FEATURE 6 -->
+
+                    <div class="experience-card">
+
+
+                        <div class="experience-icon">
+                            🍿
+                        </div>
+
+
+                        <h3>
+                            Enjoy Your Movie
+                        </h3>
+
+
+                        <p>
+                            Sit back, relax and enjoy
+                            your cinematic experience.
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =====================================
+                     HOW IT WORKS
+                ====================================== -->
+
+                <div class="cinebook-how-it-works">
+
+
+                    <span>
+                        HOW IT WORKS
+                    </span>
+
+
+                    <div class="experience-steps">
+
+
+                        <!-- 01 -->
+
+                        <div>
+
+                            <strong>
+                                01
+                            </strong>
+
+                            <p>
+                                Discover
+                            </p>
+
+                        </div>
+
+
+                        <!-- 02 -->
+
+                        <div>
+
+                            <strong>
+                                02
+                            </strong>
+
+                            <p>
+                                Select
+                            </p>
+
+                        </div>
+
+
+                        <!-- 03 -->
+
+                        <div>
+
+                            <strong>
+                                03
+                            </strong>
+
+                            <p>
+                                Choose Seat
+                            </p>
+
+                        </div>
+
+
+                        <!-- 04 -->
+
+                        <div>
+
+                            <strong>
+                                04
+                            </strong>
+
+                            <p>
+                                Pay
+                            </p>
+
+                        </div>
+
+
+                        <!-- 05 -->
+
+                        <div>
+
+                            <strong>
+                                05
+                            </strong>
+
+                            <p>
+                                Enjoy
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- START BOOKING -->
+
+                <div class="cinebook-modal-action">
+
+
+                    <a
+                        href="movies.html"
+                        class="cinebook-start-button"
+                    >
+
+                        🎟️ START BOOKING
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="footer">
+
+
+            <div class="footer-logo">
+
+
+                <img
+                    src="assests/logos/cinebook-logo.png"
+                    alt="CineBook Logo"
+                >
+
+
+            </div>
+
+
+            <p>
+
+                Your seat to the best cinematic experience.
+
+            </p>
+
+
+            <p class="copyright">
+
+                © 2026 CineBook. All rights reserved.
+
+            </p>
+
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="data/movies.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+    <!-- =========================================
+         SIDEBAR JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const sidebar =
+            document.getElementById("sidebar");
+
+        const closeSidebar =
+            document.getElementById("closeSidebar");
+
+        const sidebarOverlay =
+            document.getElementById("sidebarOverlay");
+
+
+        /* =========================================
+           OPEN MENU
+        ========================================== */
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.add("active");
+
+                sidebarOverlay.classList.add("active");
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE MENU
+        ========================================== */
+
+        closeSidebar.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.remove("active");
+
+                sidebar.classList.remove("open");
+
+                sidebarOverlay.classList.remove("active");
+
+                sidebarOverlay.classList.remove("show");
+
+            }
+        );
+
+
+        /* =========================================
+           CLICK OUTSIDE
+        ========================================== */
+
+        sidebarOverlay.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.remove("active");
+
+                sidebar.classList.remove("open");
+
+                sidebarOverlay.classList.remove("active");
+
+                sidebarOverlay.classList.remove("show");
+
+            }
+        );
+
+
+        /* =========================================
+           ESCAPE KEY
+        ========================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    sidebar.classList.remove("active");
+
+                    sidebar.classList.remove("open");
+
+                    sidebarOverlay.classList.remove("active");
+
+                    sidebarOverlay.classList.remove("show");
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           CLOSE SIDEBAR AFTER NAVIGATION
+        ========================================== */
+
+        document.querySelectorAll(".sidebar .nav-item").forEach(
+            function (item) {
+
+                item.addEventListener(
+                    "click",
+                    function () {
+
+                        sidebar.classList.remove("active");
+
+                        sidebar.classList.remove("open");
+
+                        sidebarOverlay.classList.remove("active");
+
+                        sidebarOverlay.classList.remove("show");
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Login</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Cinematic background -->
+        <div class="background"></div>
+        <div class="background-overlay"></div>
+
+        <!-- Login section -->
+        <section class="login-container">
+            <!-- Logo -->
+             <div class="logo">
+                <img
+                src="assests/logos/cinebook-logo.png"
+                alt="CineBook Logo">
+            </div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="welcome-text">
+                Sign in to continue your movie journey
+            </p>
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="eye-button"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <button type="submit" class="login-button">
+                    LOGIN
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span></span>
+                <p>OR</p>
+                <span></span>
+            </div>
+
+            <!-- Google -->
+            <button class="google-button" type="button">
+                <span class="google-icon">G</span>
+                Continue with Google
+            </button>
+
+            <!-- Signup -->
+            <p class="signup-text">
+                Don't have an account?
+                <a href="signup.html">Create Account</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+
+<script>
+
+    // Password visibility
+
+    const passwordInput =
+        document.getElementById("password");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+
+    togglePassword.addEventListener("click", function () {
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+            togglePassword.textContent = "🙈";
+
+        } else {
+
+            passwordInput.type = "password";
+            togglePassword.textContent = "👁";
+
+        }
+
+    });
+
+
+    // LOGIN
+
+    document
+        .getElementById("loginForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                .getElementById("email")
+                .value
+                .trim();
+
+            const password =
+                document
+                .getElementById("password")
+                .value;
+
+
+            const result =
+                loginUser(email, password);
+
+
+            if (result.success) {
+
+    alert("Welcome to CineBook! 🎬");
+
+
+    const bookingAfterLogin =
+        localStorage.getItem(
+            "bookingAfterLogin"
+        );
+
+
+    if (bookingAfterLogin === "true") {
+
+        localStorage.removeItem(
+            "bookingAfterLogin"
+        );
+
+        window.location.href =
+            "booking.html";
+
+    } else {
+
+        window.location.href =
+            "index.html";
+
+    }
+
+
+} else {
+
+    alert(result.message);
+
+}
+
+        });
+
+</script>
+</body>
+</html>

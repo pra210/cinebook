@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Booking Confirmed</title>
+   <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+
+<body>
+    <button class="menu-button" id="menuButton" type="button">☰</button>
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="sidebar-logo">
+            <img src="assests/logos/cinebook-logo.png" alt="CineBook Logo">
+        </div>
+
+        <button class="close-sidebar" id="closeSidebar" type="button">
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+
+        <a href="movies.html" class="nav-item">
+            <span>🎬</span>
+            <p>Movies</p>
+        </a>
+
+        <a href="index.html#trending" class="nav-item">
+            <span>🔥</span>
+            <p>Trending</p>
+        </a>
+
+        <a href="index.html#recent" class="nav-item">
+            <span>🆕</span>
+            <p>Recently Added</p>
+        </a>
+
+        <a href="index.html#languages" class="nav-item">
+            <span>🌐</span>
+            <p>Languages</p>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <p>Profile</p>
+        </a>
+
+        <a href="#" class="nav-item" id="confirmationLogoutButton">
+            <span>🚪</span>
+            <p>Logout</p>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+        <p>Enjoy your movie night 🍿</p>
+    </div>
+
+</aside>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <main class="confirmation-page">
+
+        <div class="confirmation-card">
+
+            <!-- SUCCESS ICON -->
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="success-label">
+                BOOKING CONFIRMED
+            </span>
+
+            <h1>
+                Enjoy Your Movie! 🎬
+            </h1>
+
+            <p class="success-message">
+                Your tickets have been successfully booked.
+            </p>
+
+
+            <!-- MOVIE -->
+            <div class="confirmation-movie">
+
+                <img
+                    id="confirmationPoster"
+                    src=""
+                    alt="Movie Poster"
+                >
+
+                <div>
+
+                    <span>
+                        MOVIE
+                    </span>
+
+                    <h2 id="confirmationMovie">
+                        Loading...
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING DETAILS -->
+            <div class="confirmation-details">
+
+                <div>
+                    <span>DATE</span>
+
+                    <strong id="confirmationDate">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>SHOW TIME</span>
+
+                    <strong id="confirmationTime">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>THEATRE</span>
+
+                    <strong id="confirmationTheatre">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>SEATS</span>
+
+                    <strong id="confirmationSeats">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING ID -->
+            <div class="booking-id">
+
+                <span>
+                    BOOKING ID
+                </span>
+
+                <strong id="bookingId">
+                    CB000000
+                </strong>
+
+            </div>
+
+
+            <!-- TOTAL -->
+            <div class="confirmation-total">
+
+                <span>
+                    TOTAL PAID
+                </span>
+
+                <strong id="confirmationTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+            <div class="confirmation-actions">
+
+                <button
+                    type="button"
+                    id="downloadTicket">
+
+                    🎟️ VIEW TICKET
+
+                </button>
+
+                <a href="index.html">
+                    ← BACK TO HOME
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/confirmation.js"></script>
+    <script src="js/confirmation.js"></script>
+
+<script>
+
+const menuButton = document.getElementById("menuButton");
+const sidebar = document.getElementById("sidebar");
+const closeSidebar = document.getElementById("closeSidebar");
+const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+menuButton.addEventListener("click", function () {
+    sidebar.classList.add("active");
+    sidebarOverlay.classList.add("active");
+});
+
+closeSidebar.addEventListener("click", function () {
+    sidebar.classList.remove("active");
+    sidebarOverlay.classList.remove("active");
+});
+
+sidebarOverlay.addEventListener("click", function () {
+    sidebar.classList.remove("active");
+    sidebarOverlay.classList.remove("active");
+});
+
+</script>
+
+</body>
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineBook | Create Account</title>
+    <link rel="icon" type="image/png" href="assests/logos/cinebook-logo.png">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <div class="background"></div>
+        <div class="background-overlay"></div>
+
+        <section class="login-container">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">🎬</div>
+
+                <h1>Cine<span>Book</span></h1>
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p class="welcome-text">
+                Join CineBook and start your movie journey
+            </p>
+
+
+            <!-- Signup Form -->
+            <form id="signupForm">
+
+                <!-- Full Name -->
+                <div class="input-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group">
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleSignupPassword"
+                            class="eye-button"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            minlength="6"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleConfirmPassword"
+                            class="eye-button"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Terms -->
+                <label class="remember-me">
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+                        I agree to the CineBook terms
+                    </span>
+                </label>
+
+
+                <!-- Create Account -->
+                <button
+                    type="submit"
+                    class="login-button"
+                    style="margin-top: 22px;"
+                >
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+
+            <!-- Login link -->
+            <p class="signup-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        // Password visibility
+
+        const signupPassword =
+            document.getElementById("signupPassword");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+
+        const toggleSignupPassword =
+            document.getElementById("toggleSignupPassword");
+
+        const toggleConfirmPassword =
+            document.getElementById("toggleConfirmPassword");
+
+
+        toggleSignupPassword.addEventListener("click", function () {
+
+            if (signupPassword.type === "password") {
+
+                signupPassword.type = "text";
+
+                toggleSignupPassword.textContent = "🙈";
+
+            } else {
+
+                signupPassword.type = "password";
+
+                toggleSignupPassword.textContent = "👁";
+
+            }
+
+        });
+
+
+        toggleConfirmPassword.addEventListener("click", function () {
+
+            if (confirmPassword.type === "password") {
+
+                confirmPassword.type = "text";
+
+                toggleConfirmPassword.textContent = "🙈";
+
+            } else {
+
+                confirmPassword.type = "password";
+
+                toggleConfirmPassword.textContent = "👁";
+
+            }
+
+        });
+
+
+        // Signup
+
+        document
+            .getElementById("signupForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("signupEmail").value.trim();
+
+                const password =
+                    document.getElementById("signupPassword").value;
+
+                const confirmPasswordValue =
+                    document.getElementById("confirmPassword").value;
+
+
+                // Password check
+
+                if (password !== confirmPasswordValue) {
+
+                    alert("Passwords do not match!");
+
+                    return;
+
+                }
+
+
+                // Save user for frontend demo
+
+                const user = {
+
+                    name: name,
+
+                    email: email,
+
+                    password: password
+
+                };
+
+
+                localStorage.setItem(
+                    "cinebookUser",
+                    JSON.stringify(user)
+                );
+
+
+                alert(
+                    "Account created successfully! 🎬"
+                );
+
+
+                window.location.href = "login.html";
+
+            });
+
+    </script>
+
+</body>
+</html>

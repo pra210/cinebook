@@ -1,0 +1,668 @@
+/* =========================================
+   CINEBOOK - PROFILE PAGE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(3, 5, 10, 0.62),
+            rgba(3, 5, 10, 0.74)
+        ),
+        url("../assests/images/backgrounds/homepage-bg.jpg");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.profile-header {
+    height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(7, 9, 16, 0.94);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.profile-logo {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.profile-logo span {
+    color: #e50914;
+}
+
+.back-home {
+    padding: 10px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    background: #e50914;
+    border-color: #e50914;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.profile-page {
+    min-height: calc(100vh - 78px);
+
+    padding: 55px 7% 80px;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.profile-heading {
+    margin-bottom: 30px;
+}
+
+.profile-heading > span {
+    color: #e50914;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.profile-heading h1 {
+    margin-top: 10px;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    font-weight: 900;
+}
+
+.profile-heading h1 strong {
+    color: #ff3038;
+}
+
+.profile-heading p {
+    margin-top: 9px;
+
+    color: #7f8898;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.profile-avatar {
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e50914,
+            #8b0007
+        );
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: 900;
+
+    box-shadow:
+        0 10px 30px rgba(229, 9, 20, 0.25);
+}
+
+
+/* =========================================
+   PROFILE INFO
+========================================= */
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info > span {
+    color: #6f7888;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.profile-info h2 {
+    margin-top: 6px;
+
+    font-size: 21px;
+}
+
+.profile-info p {
+    margin-top: 5px;
+
+    color: #7f8898;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-button {
+    padding: 11px 18px;
+
+    border: 1px solid rgba(229, 9, 20, 0.4);
+
+    border-radius: 8px;
+
+    background: rgba(229, 9, 20, 0.08);
+
+    color: #ff4b53;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.logout-button:hover {
+    background: #e50914;
+
+    border-color: #e50914;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ACCOUNT SECTION
+========================================= */
+
+.account-section {
+    margin-bottom: 50px;
+}
+
+.account-section > h2 {
+    margin-bottom: 18px;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.account-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+/* =========================================
+   ACCOUNT CARD
+========================================= */
+
+.account-card {
+    width: 100%;
+
+    min-height: 85px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.account-card:hover {
+    border-color: rgba(229, 9, 20, 0.35);
+
+    background: rgba(229, 9, 20, 0.05);
+
+    transform: translateY(-3px);
+}
+
+.account-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 19px;
+}
+
+.account-card div {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.account-card strong {
+    font-size: 13px;
+}
+
+.account-card small {
+    color: #697283;
+
+    font-size: 10px;
+}
+
+.account-card .arrow {
+    color: #596273;
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+.account-card:hover .arrow {
+    color: #e50914;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   BOOKING HISTORY
+========================================= */
+
+.booking-history {
+    margin-top: 20px;
+}
+
+.history-heading {
+    margin-bottom: 18px;
+}
+
+.history-heading > div > span {
+    color: #e50914;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.history-heading h2 {
+    margin-top: 7px;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   EMPTY BOOKINGS
+========================================= */
+
+.empty-bookings {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.empty-bookings > div {
+    font-size: 40px;
+
+    margin-bottom: 12px;
+}
+
+.empty-bookings h3 {
+    font-size: 18px;
+}
+
+.empty-bookings p {
+    margin-top: 8px;
+
+    color: #6f7888;
+
+    font-size: 12px;
+}
+
+.empty-bookings a {
+    display: inline-flex;
+
+    margin-top: 20px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: #e50914;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.empty-bookings a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(229, 9, 20, 0.3);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .profile-header {
+        padding: 0 5%;
+    }
+
+    .profile-page {
+        padding: 45px 5% 60px;
+    }
+
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .logout-button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .profile-logo {
+        font-size: 20px;
+    }
+
+    .back-home {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-avatar {
+        width: 62px;
+        height: 62px;
+
+        font-size: 23px;
+    }
+
+    .profile-info h2 {
+        font-size: 18px;
+    }
+
+}
+/* =========================================
+   BOOKING CARDS
+========================================= */
+
+.booking-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.booking-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    transition: 0.3s ease;
+}
+
+.booking-card:hover {
+    border-color: rgba(229, 9, 20, 0.3);
+
+    transform: translateY(-2px);
+}
+
+.booking-poster {
+    width: 90px;
+    height: 125px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.booking-details {
+    flex: 1;
+}
+
+.booking-details h3 {
+    margin-bottom: 9px;
+
+    font-size: 20px;
+}
+
+.booking-details p {
+    margin-top: 5px;
+
+    color: #8a93a2;
+
+    font-size: 11px;
+}
+
+.booking-details strong {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #ffd21c;
+
+    font-size: 17px;
+}
+
+.booking-side {
+    min-width: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 8px;
+}
+
+.booking-side span {
+    color: #65d98c;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.booking-side small {
+    color: #6f7888;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .booking-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .booking-poster {
+        width: 75px;
+        height: 105px;
+    }
+
+    .booking-details h3 {
+        font-size: 17px;
+    }
+
+    .booking-side {
+        width: 100%;
+
+        align-items: flex-start;
+    }
+
+}
