@@ -11,24 +11,18 @@
 body {
     min-height: 100vh;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-family:
-        Arial,
-        Helvetica,
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         sans-serif;
 
-    background:
-        linear-gradient(
-            rgba(3, 5, 10, 0.62),
-            rgba(3, 5, 10, 0.74)
-        ),
-        url("../assests/images/backgrounds/homepage-bg.jpg");
-
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #f7f7f5;
 }
 
 
@@ -49,13 +43,10 @@ body {
 
     padding: 0 7%;
 
-    background:
-        rgba(7, 9, 16, 0.94);
+    background: #ffffff;
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #e1e3e6;
+    box-shadow: 0 3px 14px rgba(31,35,40,.06);
 
     position: sticky;
 
@@ -88,14 +79,14 @@ body {
     padding: 11px 18px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.14);
+        1px solid #d7d9dd;
 
-    border-radius: 9px;
+    border-radius: 6px;
 
     background:
-        rgba(255, 255, 255, 0.04);
+        #ffffff;
 
-    color: #ffffff;
+    color: #20242a;
 
     text-decoration: none;
 
@@ -109,11 +100,13 @@ body {
 
 .back-link:hover {
 
-    background: #e50914;
+    background: #c91f2b;
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    transform: translateY(-2px);
+    color: #ffffff;
+
+    transform: translateY(-1px);
 }
 
 
@@ -155,7 +148,7 @@ body {
 
 .payment-heading > span {
 
-    color: #e50914;
+    color: #c91f2b;
 
     font-size: 11px;
 
@@ -172,7 +165,8 @@ body {
     font-size:
         clamp(32px, 5vw, 48px);
 
-    font-weight: 900;
+    color: #20242a;
+    font-weight: 800;
 }
 
 
@@ -180,7 +174,7 @@ body {
 
     margin-top: 9px;
 
-    color: #7f8898;
+    color: #68717c;
 
     font-size: 14px;
 }
@@ -203,13 +197,12 @@ body {
 
     padding: 18px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #e1e3e6;
 
-    border-radius: 14px;
+    border-radius: 10px;
 
-    background:
-        rgba(255, 255, 255, 0.04);
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(31,35,40,.07);
 }
 
 
@@ -229,7 +222,7 @@ body {
 
 .payment-movie span {
 
-    color: #e50914;
+    color: #c91f2b;
 
     font-size: 9px;
 
@@ -243,6 +236,7 @@ body {
 
     margin-top: 7px;
 
+    color: #20242a;
     font-size: 23px;
 }
 
@@ -251,7 +245,7 @@ body {
 
     margin-top: 7px;
 
-    color: #7f8898;
+    color: #68717c;
 
     font-size: 11px;
 }
@@ -264,22 +258,16 @@ body {
 
 .payment-card {
 
-    padding: 30px;
+    padding: 28px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid #e1e3e6;
 
-    border-radius: 18px;
+    border-radius: 10px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.065),
-            rgba(255, 255, 255, 0.025)
-        );
+    background: #ffffff;
 
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 12px 28px rgba(31,35,40,.07);
 }
 
 
@@ -302,6 +290,7 @@ body {
 
 .payment-card-heading h2 {
 
+    color: #20242a;
     font-size: 20px;
 }
 
@@ -310,7 +299,7 @@ body {
 
     margin-top: 5px;
 
-    color: #697385;
+    color: #68717c;
 
     font-size: 11px;
 }
@@ -323,9 +312,9 @@ body {
     border-radius: 6px;
 
     background:
-        rgba(44, 190, 100, 0.10);
+        #eef8f1;
 
-    color: #65d98c;
+    color: #277a49;
 
     font-size: 9px;
 
@@ -368,14 +357,13 @@ body {
     padding: 15px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.09);
+        1px solid #dfe1e4;
 
-    border-radius: 12px;
+    border-radius: 8px;
 
-    background:
-        rgba(255, 255, 255, 0.035);
+    background: #f8f9fa;
 
-    color: #ffffff;
+    color: #20242a;
 
     cursor: pointer;
 
@@ -387,26 +375,21 @@ body {
 
 .payment-method:hover {
 
-    border-color:
-        rgba(229, 9, 20, 0.45);
+    border-color: #d88b91;
 
-    background:
-        rgba(229, 9, 20, 0.06);
+    background: #fffafa;
 
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 
 .payment-method.active {
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    background:
-        rgba(229, 9, 20, 0.09);
+    background: #fffafa;
 
-    box-shadow:
-        0 0 0 1px
-        rgba(229, 9, 20, 0.15);
+    box-shadow: inset 3px 0 0 #c91f2b;
 }
 
 
@@ -425,7 +408,7 @@ body {
     border-radius: 9px;
 
     background:
-        rgba(255, 255, 255, 0.08);
+        #e9ebed;
 
     font-size: 18px;
 
@@ -438,9 +421,9 @@ body {
 .method-icon.google {
 
     background:
-        rgba(255, 255, 255, 0.10);
+        #e9ebed;
 
-    color: #ffffff;
+    color: #20242a;
 }
 
 
@@ -474,13 +457,14 @@ body {
 
 .method-content strong {
 
+    color: #20242a;
     font-size: 12px;
 }
 
 
 .method-content small {
 
-    color: #747e90;
+    color: #68717c;
 
     font-size: 9px;
 
@@ -508,7 +492,7 @@ body {
 
     border-radius: 50%;
 
-    background: #e50914;
+    background: #c91f2b;
 
     color: #ffffff;
 
@@ -581,7 +565,7 @@ body {
 
     margin-bottom: 8px;
 
-    color: #aab2c0;
+    color: #4f5964;
 
     font-size: 11px;
 
@@ -598,16 +582,16 @@ body {
     padding: 0 15px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.10);
+        1px solid #d7d9dd;
 
-    border-radius: 9px;
+    border-radius: 6px;
 
     outline: none;
 
     background:
-        rgba(0, 0, 0, 0.20);
+        #ffffff;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-size: 13px;
 
@@ -617,20 +601,20 @@ body {
 
 .form-group input::placeholder {
 
-    color: #4f5868;
+    color: #89919a;
 }
 
 
 .form-group input:focus {
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
     background:
-        rgba(229, 9, 20, 0.035);
+        #fffafa;
 
     box-shadow:
         0 0 0 3px
-        rgba(229, 9, 20, 0.08);
+        rgba(201,31,43,.1);
 }
 
 
@@ -670,12 +654,11 @@ body {
     padding: 25px;
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid #e1e3e6;
 
-    border-radius: 14px;
+    border-radius: 8px;
 
-    background:
-        rgba(0, 0, 0, 0.18);
+    background: #f8f9fa;
 
     text-align: center;
 
@@ -721,6 +704,7 @@ body {
 
 .digital-payment-box h3 {
 
+    color: #20242a;
     font-size: 18px;
 }
 
@@ -731,7 +715,7 @@ body {
 
     margin-top: 7px;
 
-    color: #7f8898;
+    color: #68717c;
 
     font-size: 12px;
 
@@ -748,9 +732,9 @@ body {
     border-radius: 6px;
 
     background:
-        rgba(229, 9, 20, 0.08);
+        #f8e8e9;
 
-    color: #e50914;
+    color: #c91f2b;
 
     font-size: 9px;
 
@@ -780,18 +764,18 @@ body {
     padding: 18px 20px;
 
     border:
-        1px solid rgba(229, 9, 20, 0.18);
+        1px solid #efc5c8;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
     background:
-        rgba(229, 9, 20, 0.07);
+        #fffafa;
 }
 
 
 .payment-total span {
 
-    color: #8a93a2;
+    color: #68717c;
 
     font-size: 10px;
 
@@ -803,7 +787,7 @@ body {
 
 .payment-total strong {
 
-    color: #ffd21c;
+    color: #a36a00;
 
     font-size: 23px;
 }
@@ -830,14 +814,9 @@ body {
 
     border: none;
 
-    border-radius: 9px;
+    border-radius: 6px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff1b26,
-            #c9000b
-        );
+    background: #c91f2b;
 
     color: #ffffff;
 
@@ -849,9 +828,7 @@ body {
 
     cursor: pointer;
 
-    box-shadow:
-        0 12px 30px
-        rgba(229, 9, 20, 0.25);
+    box-shadow: 0 7px 16px rgba(130,20,28,.16);
 
     transition: 0.3s ease;
 }
@@ -868,11 +845,10 @@ body {
 
 .pay-button:hover {
 
-    transform: translateY(-3px);
+    background: #ad1925;
+    transform: translateY(-1px);
 
-    box-shadow:
-        0 18px 40px
-        rgba(229, 9, 20, 0.40);
+    box-shadow: 0 9px 20px rgba(130,20,28,.2);
 }
 
 
@@ -894,7 +870,7 @@ span:last-child {
 
     text-align: center;
 
-    color: #555f70;
+    color: #68717c;
 
     font-size: 10px;
 }
@@ -1242,4 +1218,89 @@ span:last-child {
         width: 260px;
     }
 
+}
+
+.payment-logo {
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #20242a;
+}
+
+.payment-logo img {
+    width: 142px;
+}
+
+/* Light sidebar treatment for the final duplicated menu definitions. */
+.menu-button {
+    border-color: #d7d9dd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #20242a;
+}
+
+.menu-button:hover {
+    background: #c91f2b;
+    border-color: #c91f2b;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.sidebar {
+    background: #ffffff;
+    border-right-color: #e1e3e6;
+    box-shadow: 12px 0 28px rgba(31,35,40,.12);
+    backdrop-filter: none;
+}
+
+.sidebar-logo {
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #20242a;
+}
+
+.close-sidebar {
+    border: 1px solid #d7d9dd;
+    border-radius: 7px;
+    background: #f1f2f3;
+    color: #20242a;
+}
+
+.close-sidebar:hover {
+    background: #c91f2b;
+    color: #ffffff;
+}
+
+.sidebar .nav-item {
+    border-radius: 7px;
+    color: #68717c;
+}
+
+.sidebar .nav-item:hover {
+    background: #f8e8e9;
+    color: #20242a;
+    transform: none;
+}
+
+.sidebar-divider {
+    background: #e1e3e6;
+}
+
+.sidebar-bottom {
+    border: 1px solid #e1e3e6;
+    border-radius: 8px;
+    background: #f1f2f3;
+}
+
+.sidebar-overlay {
+    background: rgba(32,36,42,.28);
+}
+
+@media (max-width: 600px) {
+    .payment-movie {
+        align-items: flex-start;
+    }
+
+    .payment-methods {
+        gap: 8px;
+    }
 }

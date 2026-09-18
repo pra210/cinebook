@@ -16,21 +16,11 @@
 body {
     min-height: 100vh;
 
-    color: #ffffff;
+    color: #20242a;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-    background:
-        linear-gradient(
-            rgba(3, 5, 10, 0.62),
-            rgba(3, 5, 10, 0.74)
-        ),
-        url("../assests/images/backgrounds/homepage-bg.jpg");
-
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #f7f7f5;
 }
 
 
@@ -47,11 +37,10 @@ body {
 
     padding: 0 7%;
 
-    background: rgba(7, 9, 16, 0.88);
+    background: #ffffff;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e1e3e6;
+    box-shadow: 0 3px 14px rgba(31, 35, 40, .06);
 
     position: sticky;
     top: 0;
@@ -84,11 +73,15 @@ body {
     display: flex;
     align-items: center;
 
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #20242a;
+
     text-decoration: none;
 }
 
 .brand img {
-    width: 155px;
+    width: 142px;
     height: auto;
 
     display: block;
@@ -104,13 +97,13 @@ body {
 .back-link {
     padding: 10px 17px;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #d7d9dd;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
 
-    color: #ffffff;
+    color: #20242a;
 
     text-decoration: none;
 
@@ -121,11 +114,13 @@ body {
 }
 
 .back-link:hover {
-    background: #e50914;
+    background: #c91f2b;
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    transform: translateY(-2px);
+    color: #ffffff;
+
+    transform: translateY(-1px);
 }
 
 
@@ -136,11 +131,11 @@ body {
 .booking-page {
     min-height: calc(100vh - 78px);
 
-    padding: 60px 7% 80px;
+    padding: 52px 7% 75px;
 
     /* IMPORTANT:
        Don't cover the body background */
-    background: transparent;
+    background: #f7f7f5;
 }
 
 .booking-container {
@@ -157,11 +152,11 @@ body {
 ========================================= */
 
 .booking-heading {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 }
 
 .booking-heading > span {
-    color: #e50914;
+    color: #c91f2b;
 
     font-size: 11px;
     font-weight: 800;
@@ -174,7 +169,8 @@ body {
 
     font-size: clamp(32px, 5vw, 52px);
 
-    font-weight: 900;
+    color: #20242a;
+    font-weight: 800;
 
     letter-spacing: -1px;
 }
@@ -182,7 +178,7 @@ body {
 .booking-heading p {
     margin-top: 10px;
 
-    color: #aeb5c2;
+    color: #68717c;
 
     font-size: 14px;
 }
@@ -196,27 +192,18 @@ body {
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: 22px;
 
-    padding: 24px;
+    padding: 22px;
 
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid #e1e3e6;
 
-    border-radius: 16px;
+    border-radius: 10px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(15, 18, 28, 0.78),
-            rgba(8, 10, 18, 0.62)
-        );
-
-    backdrop-filter: blur(10px);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(31, 35, 40, .07);
 }
 
 .selected-movie-poster {
@@ -227,10 +214,10 @@ body {
 
     overflow: hidden;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.55);
+    border: 1px solid #e1e3e6;
+    box-shadow: 0 8px 18px rgba(31, 35, 40, .12);
 }
 
 .selected-movie-poster img {
@@ -250,7 +237,7 @@ body {
 }
 
 .movie-label {
-    color: #e50914;
+    color: #c91f2b;
 
     font-size: 10px;
     font-weight: 800;
@@ -261,6 +248,7 @@ body {
 .selected-movie-info h2 {
     font-size: 30px;
 
+    color: #20242a;
     font-weight: 800;
 }
 
@@ -277,15 +265,15 @@ body {
 
     border-radius: 6px;
 
-    background: rgba(255, 255, 255, 0.07);
+    background: #f1f2f3;
 
-    color: #aeb5c2;
+    color: #68717c;
 
     font-size: 11px;
 }
 
 .booking-movie-meta span:last-child {
-    color: #ffd21c;
+    color: #a36a00;
 }
 
 
@@ -316,11 +304,11 @@ body {
 
     border-radius: 50%;
 
-    background: rgba(229, 9, 20, 0.15);
+    background: #f8e8e9;
 
-    border: 1px solid rgba(229, 9, 20, 0.3);
+    border: 1px solid #efc5c8;
 
-    color: #ff3038;
+    color: #c91f2b;
 
     font-size: 11px;
     font-weight: 800;
@@ -329,13 +317,14 @@ body {
 .section-title h2 {
     font-size: 20px;
 
+    color: #20242a;
     font-weight: 800;
 }
 
 .section-title p {
     margin-top: 4px;
 
-    color: #8b94a4;
+    color: #68717c;
 
     font-size: 11px;
 }
@@ -357,15 +346,13 @@ body {
 .date-card {
     padding: 16px 10px;
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid #dfe1e4;
 
-    border-radius: 12px;
+    border-radius: 8px;
 
-    background: rgba(8, 10, 18, 0.68);
+    background: #ffffff;
 
-    backdrop-filter: blur(8px);
-
-    color: #ffffff;
+    color: #20242a;
 
     cursor: pointer;
 
@@ -376,7 +363,7 @@ body {
 .date-card small {
     display: block;
 
-    color: #8b94a4;
+    color: #68717c;
 
     font-size: 10px;
     font-weight: 700;
@@ -393,18 +380,17 @@ body {
 }
 
 .date-card:hover {
-    border-color: rgba(229, 9, 20, 0.5);
+    border-color: #d88b91;
 
-    transform: translateY(-4px);
+    transform: translateY(-2px);
 }
 
 .date-card.active {
-    background: #e50914;
+    background: #c91f2b;
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    box-shadow:
-        0 12px 30px rgba(229, 9, 20, 0.25);
+    box-shadow: 0 7px 16px rgba(130, 20, 28, .16);
 }
 
 .date-card.active span,
@@ -432,17 +418,15 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    padding: 18px 20px;
+    padding: 16px 18px;
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid #dfe1e4;
 
-    border-radius: 12px;
+    border-radius: 8px;
 
-    background: rgba(8, 10, 18, 0.68);
+    background: #ffffff;
 
-    backdrop-filter: blur(8px);
-
-    color: #ffffff;
+    color: #20242a;
 
     text-align: left;
 
@@ -464,13 +448,13 @@ body {
 }
 
 .theatre-card small {
-    color: #8b94a4;
+    color: #68717c;
 
     font-size: 10px;
 }
 
 .theatre-card > span {
-    color: #8b94a4;
+    color: #87909a;
 
     font-size: 24px;
 
@@ -478,24 +462,20 @@ body {
 }
 
 .theatre-card:hover {
-    border-color: rgba(229, 9, 20, 0.4);
+    border-color: #d88b91;
 
-    transform: translateX(4px);
+    transform: translateX(2px);
 }
 
 .theatre-card:hover > span {
-    color: #e50914;
+    color: #c91f2b;
 }
 
 .theatre-card.active {
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(229, 9, 20, 0.16),
-            rgba(8, 10, 18, 0.70)
-        );
+    background: #fffafa;
+    box-shadow: inset 3px 0 0 #c91f2b;
 }
 
 
@@ -516,15 +496,13 @@ body {
 
     padding: 14px 18px;
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid #dfe1e4;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
-    background: rgba(8, 10, 18, 0.68);
+    background: #ffffff;
 
-    backdrop-filter: blur(8px);
-
-    color: #ffffff;
+    color: #20242a;
 
     cursor: pointer;
 
@@ -542,24 +520,23 @@ body {
 
     margin-top: 5px;
 
-    color: #8b94a4;
+    color: #68717c;
 
     font-size: 10px;
 }
 
 .time-card:hover {
-    border-color: rgba(229, 9, 20, 0.5);
+    border-color: #d88b91;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .time-card.active {
-    background: #e50914;
+    background: #c91f2b;
 
-    border-color: #e50914;
+    border-color: #c91f2b;
 
-    box-shadow:
-        0 10px 25px rgba(229, 9, 20, 0.22);
+    box-shadow: 0 7px 16px rgba(130, 20, 28, .16);
 }
 
 .time-card.active small {
@@ -576,11 +553,11 @@ body {
 
     justify-content: flex-end;
 
-    margin-top: 45px;
+    margin-top: 38px;
 
-    padding-top: 30px;
+    padding-top: 25px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    border-top: 1px solid #e1e3e6;
 }
 
 .continue-button {
@@ -598,12 +575,7 @@ body {
 
     border-radius: 8px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff1b26,
-            #c9000b
-        );
+    background: #c91f2b;
 
     color: #ffffff;
 
@@ -614,8 +586,7 @@ body {
 
     cursor: pointer;
 
-    box-shadow:
-        0 12px 30px rgba(229, 9, 20, 0.25);
+    box-shadow: 0 7px 16px rgba(130, 20, 28, .16);
 
     transition: 0.3s ease;
 }
@@ -627,10 +598,10 @@ body {
 }
 
 .continue-button:hover {
-    transform: translateY(-4px);
+    background: #ad1925;
+    transform: translateY(-1px);
 
-    box-shadow:
-        0 18px 40px rgba(229, 9, 20, 0.4);
+    box-shadow: 0 9px 20px rgba(130, 20, 28, .2);
 }
 
 .continue-button:hover span {
@@ -730,12 +701,12 @@ body {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 9px;
+    border: 1px solid #d7d9dd;
+    border-radius: 7px;
 
-    background: rgba(7, 9, 16, 0.85);
+    background: #ffffff;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-size: 22px;
 
@@ -749,8 +720,9 @@ body {
 }
 
 .menu-button:hover {
-    background: #e50914;
-    border-color: #e50914;
+    background: #c91f2b;
+    border-color: #c91f2b;
+    color: #ffffff;
 
     transform: translateY(-2px);
 }
@@ -769,19 +741,11 @@ body {
 
     padding: 25px 18px;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(12, 14, 23, 0.98),
-            rgba(5, 7, 12, 0.98)
-        );
+    background: #ffffff;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid #e1e3e6;
 
-    box-shadow:
-        15px 0 50px rgba(0, 0, 0, 0.45);
-
-    backdrop-filter: blur(18px);
+    box-shadow: 12px 0 28px rgba(31,35,40,.12);
 
     z-index: 1100;
 
@@ -823,6 +787,10 @@ body {
     height: 45px;
 
     overflow: hidden;
+
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #20242a;
 }
 
 .sidebar-logo img {
@@ -841,12 +809,12 @@ body {
     width: 35px;
     height: 35px;
 
-    border: none;
-    border-radius: 8px;
+    border: 1px solid #d7d9dd;
+    border-radius: 7px;
 
-    background: rgba(255, 255, 255, 0.06);
+    background: #f1f2f3;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-size: 23px;
 
@@ -856,7 +824,8 @@ body {
 }
 
 .close-sidebar:hover {
-    background: #e50914;
+    background: #c91f2b;
+    color: #ffffff;
 }
 
 
@@ -880,9 +849,9 @@ body {
 
     padding: 0 15px;
 
-    border-radius: 9px;
+    border-radius: 7px;
 
-    color: #aeb5c2;
+    color: #68717c;
 
     text-decoration: none;
 
@@ -906,11 +875,11 @@ body {
 
 
 .nav-item:hover {
-    background: rgba(229, 9, 20, 0.10);
+    background: #f8e8e9;
 
-    color: #ffffff;
+    color: #20242a;
 
-    transform: translateX(4px);
+    transform: none;
 }
 
 
@@ -921,7 +890,7 @@ body {
 
     margin: 15px 5px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: #e1e3e6;
 }
 
 
@@ -932,9 +901,11 @@ body {
 
     padding: 18px;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: #f1f2f3;
+
+    border: 1px solid #e1e3e6;
 
     text-align: center;
 }
@@ -955,7 +926,7 @@ body {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.60);
+    background: rgba(32,36,42,.28);
 
     opacity: 0;
     visibility: hidden;

@@ -11,21 +11,11 @@
 body {
     min-height: 100vh;
 
-    color: #ffffff;
+    color: #20242a;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-    background:
-        linear-gradient(
-            rgba(3, 5, 10, 0.62),
-            rgba(3, 5, 10, 0.74)
-        ),
-        url("../assests/images/backgrounds/homepage-bg.jpg");
-
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #f7f7f5;
 }
 
 /* =========================================
@@ -39,7 +29,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    padding: 50px 20px;
+    padding: 42px 20px;
 }
 
 
@@ -51,24 +41,16 @@ body {
     width: 100%;
     max-width: 620px;
 
-    padding: 45px;
+    padding: 36px;
 
     text-align: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 22px;
+    border: 1px solid #e1e3e6;
+    border-radius: 10px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.07),
-            rgba(255, 255, 255, 0.025)
-        );
+    background: #ffffff;
 
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.5);
-
-    backdrop-filter: blur(15px);
+    box-shadow: 0 16px 36px rgba(31,35,40,.1);
 
     animation: cardAppear 0.7s ease both;
 }
@@ -90,22 +72,20 @@ body {
 
     border-radius: 50%;
 
-    background: #e50914;
+    background: #c91f2b;
 
     color: #ffffff;
 
     font-size: 36px;
     font-weight: 900;
 
-    box-shadow:
-        0 0 0 10px rgba(229, 9, 20, 0.08),
-        0 15px 40px rgba(229, 9, 20, 0.3);
+    box-shadow: 0 0 0 8px #f8e8e9, 0 8px 18px rgba(130,20,28,.18);
 
     animation: successPop 0.6s ease 0.3s both;
 }
 
 .success-label {
-    color: #ff3038;
+    color: #c91f2b;
 
     font-size: 11px;
     font-weight: 800;
@@ -117,13 +97,14 @@ body {
     margin-top: 12px;
 
     font-size: 34px;
-    font-weight: 900;
+    color: #20242a;
+    font-weight: 800;
 }
 
 .success-message {
     margin-top: 10px;
 
-    color: #7f8898;
+    color: #68717c;
 
     font-size: 14px;
 }
@@ -144,10 +125,10 @@ body {
 
     text-align: left;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
+    border: 1px solid #e1e3e6;
+    border-radius: 8px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: #f8f9fa;
 }
 
 .confirmation-movie img {
@@ -158,11 +139,12 @@ body {
 
     object-fit: cover;
 
-    border-radius: 7px;
+    border: 1px solid #dfe1e4;
+    border-radius: 6px;
 }
 
 .confirmation-movie span {
-    color: #6f7888;
+    color: #68717c;
 
     font-size: 9px;
     font-weight: 800;
@@ -173,6 +155,7 @@ body {
 .confirmation-movie h2 {
     margin-top: 7px;
 
+    color: #20242a;
     font-size: 21px;
 }
 
@@ -196,9 +179,10 @@ body {
 
     text-align: left;
 
-    border-radius: 10px;
+    border: 1px solid #e1e3e6;
+    border-radius: 8px;
 
-    background: rgba(255, 255, 255, 0.035);
+    background: #f8f9fa;
 }
 
 .confirmation-details span {
@@ -206,7 +190,7 @@ body {
 
     margin-bottom: 7px;
 
-    color: #687283;
+    color: #68717c;
 
     font-size: 9px;
     font-weight: 800;
@@ -217,7 +201,7 @@ body {
 .confirmation-details strong {
     display: block;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-size: 12px;
 
@@ -234,14 +218,14 @@ body {
 
     padding: 15px;
 
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
+    border: 1px dashed #cbd0d5;
+    border-radius: 8px;
 }
 
 .booking-id span {
     display: block;
 
-    color: #687283;
+    color: #68717c;
 
     font-size: 9px;
     font-weight: 800;
@@ -254,7 +238,7 @@ body {
 
     margin-top: 7px;
 
-    color: #ffffff;
+    color: #20242a;
 
     font-size: 18px;
 
@@ -274,15 +258,15 @@ body {
     margin-top: 18px;
     padding: 18px 20px;
 
-    border-radius: 10px;
+    border-radius: 8px;
 
-    background: rgba(229, 9, 20, 0.08);
+    background: #fffafa;
 
-    border: 1px solid rgba(229, 9, 20, 0.18);
+    border: 1px solid #efc5c8;
 }
 
 .confirmation-total span {
-    color: #8a93a2;
+    color: #68717c;
 
     font-size: 10px;
     font-weight: 800;
@@ -291,7 +275,7 @@ body {
 }
 
 .confirmation-total strong {
-    color: #ffd21c;
+    color: #a36a00;
 
     font-size: 22px;
 }
@@ -320,7 +304,7 @@ body {
 
     padding: 0 20px;
 
-    border-radius: 8px;
+    border-radius: 6px;
 
     font-size: 11px;
     font-weight: 800;
@@ -335,33 +319,32 @@ body {
 .confirmation-actions button {
     border: none;
 
-    background: #e50914;
+    background: #c91f2b;
 
     color: #ffffff;
 
-    box-shadow:
-        0 10px 25px rgba(229, 9, 20, 0.25);
+    box-shadow: 0 7px 16px rgba(130,20,28,.16);
 }
 
 .confirmation-actions button:hover {
-    transform: translateY(-3px);
+    background: #ad1925;
+    transform: translateY(-1px);
 
-    box-shadow:
-        0 15px 35px rgba(229, 9, 20, 0.4);
+    box-shadow: 0 9px 20px rgba(130,20,28,.2);
 }
 
 .confirmation-actions a {
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid #d7d9dd;
 
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
 
-    color: #ffffff;
+    color: #20242a;
 }
 
 .confirmation-actions a:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: #f1f2f3;
 
-    transform: translateY(-3px);
+    transform: translateY(-1px);
 }
 
 
@@ -720,4 +703,69 @@ body {
         width: 260px;
     }
 
+}
+
+/* Light sidebar treatment for the final menu definitions. */
+.menu-button {
+    border-color: #d7d9dd;
+    border-radius: 7px;
+    background: #ffffff;
+    color: #20242a;
+}
+
+.menu-button:hover {
+    background: #c91f2b;
+    border-color: #c91f2b;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.sidebar {
+    background: #ffffff;
+    border-right-color: #e1e3e6;
+    box-shadow: 12px 0 28px rgba(31,35,40,.12);
+    backdrop-filter: none;
+}
+
+.sidebar-logo {
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #20242a;
+}
+
+.close-sidebar {
+    border: 1px solid #d7d9dd;
+    border-radius: 7px;
+    background: #f1f2f3;
+    color: #20242a;
+}
+
+.close-sidebar:hover {
+    background: #c91f2b;
+    color: #ffffff;
+}
+
+.sidebar .nav-item {
+    border-radius: 7px;
+    color: #68717c;
+}
+
+.sidebar .nav-item:hover {
+    background: #f8e8e9;
+    color: #20242a;
+    transform: none;
+}
+
+.sidebar-divider {
+    background: #e1e3e6;
+}
+
+.sidebar-bottom {
+    border: 1px solid #e1e3e6;
+    border-radius: 8px;
+    background: #f1f2f3;
+}
+
+.sidebar-overlay {
+    background: rgba(32,36,42,.28);
 }

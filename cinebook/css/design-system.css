@@ -1,0 +1,265 @@
+:root {
+    --cb-page: #0b0d11;
+    --cb-surface: #12151b;
+    --cb-surface-raised: #181c23;
+    --cb-border: rgba(255, 255, 255, 0.09);
+    --cb-border-strong: rgba(255, 255, 255, 0.15);
+    --cb-text: #f4f5f7;
+    --cb-text-muted: #a4abb6;
+    --cb-accent: #d61f2c;
+    --cb-accent-hover: #ed2937;
+    --cb-accent-soft: rgba(214, 31, 44, 0.14);
+    --cb-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+    --cb-radius: 10px;
+    --cb-transition: 180ms ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cb-page);
+    color: var(--cb-text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+a,
+.primary-button,
+.secondary-button,
+.back-link,
+.back-home,
+.header-login,
+.details-header .back-button,
+.logout-button,
+.menu-button {
+    transition: background-color var(--cb-transition), border-color var(--cb-transition), color var(--cb-transition), transform var(--cb-transition), box-shadow var(--cb-transition);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--cb-accent-hover);
+    outline-offset: 3px;
+}
+
+.sidebar,
+.top-header,
+.booking-header,
+.seats-header,
+.payment-header,
+.profile-header,
+.details-header {
+    background: var(--cb-surface) !important;
+    border-color: var(--cb-border) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+    backdrop-filter: none !important;
+}
+
+.sidebar {
+    padding: 22px 18px !important;
+    border-right-color: var(--cb-border-strong) !important;
+}
+
+.sidebar-header {
+    padding-bottom: 22px !important;
+    border-bottom-color: var(--cb-border) !important;
+}
+
+.sidebar-nav {
+    gap: 4px !important;
+    margin-top: 20px !important;
+}
+
+.nav-item {
+    min-height: 44px !important;
+    height: 44px !important;
+    border-radius: 7px !important;
+    color: var(--cb-text-muted) !important;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: var(--cb-accent-soft) !important;
+    color: var(--cb-text) !important;
+    transform: none !important;
+}
+
+.nav-item.active {
+    border-left: 3px solid var(--cb-accent) !important;
+}
+
+.close-sidebar,
+.menu-button {
+    border: 1px solid var(--cb-border) !important;
+    border-radius: 7px !important;
+    background: var(--cb-surface-raised) !important;
+}
+
+.close-sidebar:hover,
+.menu-button:hover {
+    background: var(--cb-accent) !important;
+    border-color: var(--cb-accent) !important;
+    transform: none !important;
+}
+
+.sidebar-divider {
+    background: var(--cb-border) !important;
+}
+
+.sidebar-bottom {
+    background: var(--cb-surface-raised) !important;
+    border: 1px solid var(--cb-border) !important;
+    border-radius: 8px !important;
+}
+
+.primary-button,
+.header-login:hover,
+.back-link:hover,
+.back-home:hover,
+.details-header .back-button:hover,
+.logout-button:hover {
+    background: var(--cb-accent) !important;
+    border-color: var(--cb-accent) !important;
+    box-shadow: 0 8px 20px rgba(214, 31, 44, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+.primary-button {
+    background: var(--cb-accent) !important;
+    border-radius: 7px !important;
+    box-shadow: 0 8px 20px rgba(214, 31, 44, 0.18) !important;
+}
+
+.secondary-button,
+.header-login,
+.back-link,
+.back-home,
+.details-header .back-button {
+    background: var(--cb-surface-raised) !important;
+    border-color: var(--cb-border-strong) !important;
+    border-radius: 7px !important;
+}
+
+.secondary-button:hover,
+.header-login:hover,
+.back-link:hover,
+.back-home:hover,
+.details-header .back-button:hover {
+    color: var(--cb-text) !important;
+}
+
+.selected-movie,
+.seat-movie-summary,
+.payment-movie,
+.profile-card,
+.confirmation-card,
+.details-content,
+.feature-card,
+.login-container,
+.ticket-container {
+    background: var(--cb-surface) !important;
+    border: 1px solid var(--cb-border) !important;
+    border-radius: var(--cb-radius) !important;
+    box-shadow: var(--cb-shadow) !important;
+    backdrop-filter: none !important;
+}
+
+.confirmation-movie,
+.confirmation-details > div,
+.ticket-item,
+.search-container,
+.search-results {
+    background: var(--cb-surface-raised) !important;
+    border-color: var(--cb-border) !important;
+}
+
+.selected-movie,
+.profile-card,
+.confirmation-card,
+.details-content,
+.login-container {
+    padding: 28px !important;
+}
+
+.feature-card:hover {
+    background: var(--cb-surface-raised) !important;
+    border-color: var(--cb-border-strong) !important;
+    transform: translateY(-3px) !important;
+}
+
+.feature-icon {
+    background: var(--cb-accent-soft) !important;
+}
+
+.success-icon,
+.profile-avatar {
+    background: var(--cb-accent) !important;
+    box-shadow: 0 8px 20px rgba(214, 31, 44, 0.2) !important;
+}
+
+.hero h1 span,
+.section-heading > span,
+.hero-label,
+.cta-content > span,
+.details-category,
+.booking-heading > span,
+.seats-heading > span,
+.payment-heading > span,
+.profile-heading > span,
+.profile-heading h1 strong,
+.movie-label,
+.seat-movie-info > span,
+.payment-movie span,
+.success-label,
+.cb-accent,
+.logo h1 span,
+.booking-logo span,
+.seats-logo span,
+.payment-logo span,
+.profile-logo span {
+    color: var(--cb-accent) !important;
+}
+
+.hero p,
+.section-heading p,
+.booking-heading p,
+.seats-heading p,
+.payment-heading p,
+.profile-heading p,
+.profile-info p,
+.success-message,
+.feature-card p,
+.step p,
+.details-meta,
+.payment-movie p {
+    color: var(--cb-text-muted) !important;
+}
+
+.input-group input:focus,
+.search-container:focus-within {
+    border-color: var(--cb-accent) !important;
+    box-shadow: 0 0 0 3px rgba(214, 31, 44, 0.12) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
